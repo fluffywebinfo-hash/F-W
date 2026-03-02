@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
-        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); }
         .hero-gradient { background: radial-gradient(circle at top right, #f0f9ff, #ffffff); }
         .service-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         .service-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.2); }
@@ -18,14 +17,8 @@
         @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
         .floating { animation: float 5s ease-in-out infinite; }
         
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-        input[type=number] {
-            -moz-appearance: textfield;
-        }
+        input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        input[type=number] { -moz-appearance: textfield; }
 
         .loader {
             border: 3px solid #f3f3f3;
@@ -36,10 +29,7 @@
             animation: spin 1s linear infinite;
             display: none;
         }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body class="bg-[#fafafa] text-[#1a1a1a]">
@@ -48,17 +38,18 @@
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex justify-between h-20 items-center">
-                <div class="flex items-center space-x-3">
-                    <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300 group overflow-hidden">
-                        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                        </svg>
+                <a href="#" class="flex items-center space-x-3 group">
+                    <!-- Logo Image -->
+                    <img src="fw.png" alt="F&W Studio" class="h-10 w-auto object-contain" onerror="this.className='hidden'; this.nextElementSibling.className='flex h-10 w-10 bg-blue-600 rounded-lg items-center justify-center';">
+                    <!-- Fallback if img fails -->
+                    <div class="hidden">
+                        <span class="text-white font-black text-lg">FW</span>
                     </div>
                     <div class="flex flex-col">
                         <span class="text-xl font-extrabold tracking-tight text-gray-900 uppercase leading-none">F&W <span class="text-blue-600">Studio</span></span>
                         <span class="text-[8px] font-bold text-gray-400 uppercase tracking-widest mt-1">Marketing & Growth</span>
                     </div>
-                </div>
+                </a>
                 <div class="hidden md:flex space-x-8 items-center text-sm font-bold uppercase tracking-wider">
                     <a href="#services" class="text-gray-600 hover:text-blue-600 transition">Services</a>
                     <a href="#contact" class="btn-shine bg-blue-600 text-white px-8 py-3 rounded-full shadow-xl shadow-blue-200 hover:bg-blue-700 transition text-xs">Free Audit</a>
@@ -95,10 +86,10 @@
                         <span class="text-green-500 bg-green-50 px-3 py-1 rounded-full text-xs font-bold">+245%</span>
                     </div>
                     <div class="h-40 flex items-end gap-2">
-                        <div class="w-full bg-blue-100 h-1/4 rounded-t-lg"></div>
-                        <div class="w-full bg-blue-200 h-1/2 rounded-t-lg"></div>
-                        <div class="w-full bg-blue-400 h-2/3 rounded-t-lg"></div>
-                        <div class="w-full bg-blue-600 h-full rounded-t-lg"></div>
+                        <div class="w-full bg-blue-100 h-1/4 rounded-t-lg transition-all duration-700"></div>
+                        <div class="w-full bg-blue-200 h-1/2 rounded-t-lg transition-all duration-700"></div>
+                        <div class="w-full bg-blue-400 h-2/3 rounded-t-lg transition-all duration-700"></div>
+                        <div class="w-full bg-blue-600 h-full rounded-t-lg transition-all duration-700"></div>
                     </div>
                     <p class="mt-6 text-3xl font-black text-slate-900">₹45,00,000+</p>
                     <p class="text-xs text-gray-400 font-bold uppercase tracking-widest mt-1">Generated for Clients This Month</p>
@@ -142,7 +133,6 @@
 
     <!-- Final CTA & Contact -->
     <section id="contact" class="py-32 bg-[#050505] relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
         <div class="max-w-7xl mx-auto px-6 relative z-10 flex flex-col lg:flex-row gap-20">
             <div class="lg:w-1/2 text-white">
                 <h2 class="text-5xl font-black mb-8 leading-tight">Scale Your Business <br>Across Bharat.</h2>
@@ -189,21 +179,18 @@
                             <div>
                                 <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2 ml-1">Service Required</label>
                                 <select id="clientService" class="w-full px-6 py-4 bg-gray-50 rounded-2xl border-none ring-1 ring-gray-200 focus:ring-2 focus:ring-blue-600 outline-none transition cursor-pointer">
-                                    <option>Meta & Google Ads</option>
-                                    <option>Marketplace (Amazon/Flipkart)</option>
-                                    <option>Website Development</option>
-                                    <option>GST & MSME Registration</option>
-                                    <option>Social Media Management</option>
-                                    <option>Full Growth Suite</option>
+                                    <option value="Meta & Google Ads">Meta & Google Ads</option>
+                                    <option value="Marketplace (Amazon/Flipkart)">Marketplace (Amazon/Flipkart)</option>
+                                    <option value="Website Development">Website Development</option>
+                                    <option value="GST & MSME Registration" selected>GST & MSME Registration</option>
+                                    <option value="Social Media Management">Social Media Management</option>
+                                    <option value="Full Growth Suite">Full Growth Suite</option>
                                 </select>
                             </div>
                             <div>
                                 <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2 ml-1">Monthly Budget</label>
                                 <select id="clientBudget" class="w-full px-6 py-4 bg-gray-50 rounded-2xl border-none ring-1 ring-gray-200 focus:ring-2 focus:ring-blue-600 outline-none transition cursor-pointer">
-                                    <option>₹10,000 - ₹20,000</option>
-                                    <option>₹20,000 - ₹30,000</option>
-                                    <option>₹30,000 - ₹40,000</option>
-                                    <option>₹50,000+</option>
+                                    <!-- Options updated via JS -->
                                 </select>
                             </div>
                         </div>
@@ -236,6 +223,37 @@
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbz2GaLvJLD5avnqTcBU0Xqu891yzcbkEvRmEDEV0JFx9jbgf7lw6Ul2SKznXuGxVtbc/exec';
 
+        const serviceSelect = document.getElementById('clientService');
+        const budgetSelect = document.getElementById('clientBudget');
+
+        function updateBudgetOptions() {
+            const currentService = serviceSelect.value;
+            budgetSelect.innerHTML = ''; // Clear options
+
+            if (currentService === 'GST & MSME Registration') {
+                const opt = document.createElement('option');
+                opt.value = '₹3,000';
+                opt.textContent = '₹3,000';
+                budgetSelect.appendChild(opt);
+            } else {
+                const ranges = [
+                    '₹10,000 - ₹20,000',
+                    '₹20,000 - ₹30,000',
+                    '₹30,000 - ₹40,000',
+                    '₹50,000+'
+                ];
+                ranges.forEach(range => {
+                    const opt = document.createElement('option');
+                    opt.value = range;
+                    opt.textContent = range;
+                    budgetSelect.appendChild(opt);
+                });
+            }
+        }
+
+        serviceSelect.addEventListener('change', updateBudgetOptions);
+        window.addEventListener('DOMContentLoaded', updateBudgetOptions); // Initial setup
+
         function capitalize(str) {
             if (!str) return "";
             return str.trim().split(' ').map(word => 
@@ -249,7 +267,6 @@
             const submitBtn = document.getElementById('submitBtn');
             const btnText = document.getElementById('btnText');
             const btnLoader = document.getElementById('btnLoader');
-            
             const myWhatsAppNumber = "916399903954"; 
             
             const data = {
@@ -276,7 +293,6 @@
             btnText.style.display = 'none';
             btnLoader.style.display = 'block';
 
-            // ENHANCED: Double-encode message components to ensure WhatsApp receives them
             const textContent = `*F&W Studio - New Lead Request*\n\n` +
                                 `*First Name:* ${data.firstName}\n` +
                                 `*Last Name:* ${data.lastName}\n` +
@@ -288,7 +304,6 @@
             const waUrl = `https://wa.me/${myWhatsAppNumber}?text=${encodeURIComponent(textContent)}`;
 
             try {
-                // 1. Send to Google Sheets (Silent)
                 fetch(scriptURL, {
                     method: 'POST',
                     mode: 'no-cors',
@@ -297,19 +312,17 @@
                     body: JSON.stringify(data)
                 });
 
-                // 2. Switch UI
                 this.classList.add('hidden');
                 document.getElementById('successMsg').classList.remove('hidden');
                 document.getElementById('manualWaLink').href = waUrl;
 
-                // 3. Force Redirect (More reliable than window.open)
                 setTimeout(() => {
                     window.location.href = waUrl;
                 }, 800);
 
             } catch (error) {
                 console.error('Submission error:', error);
-                window.location.href = waUrl; // Fail forward to WhatsApp anyway
+                window.location.href = waUrl;
             }
         });
     </script>
