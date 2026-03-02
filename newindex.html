@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F&W Marketing Studio | Scale Your Business in India</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .hero-gradient { background: radial-gradient(circle at top right, #f0f9ff, #ffffff); }
+        .service-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.2); }
+        .btn-shine { position: relative; overflow: hidden; }
+        .btn-shine::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(255,255,255,0.4), transparent); transform: rotate(45deg); transition: 0.6s; }
+        .btn-shine:hover::after { left: 120%; }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
+        .floating { animation: float 5s ease-in-out infinite; }
+        
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 3px solid #3b82f6;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-[#fafafa] text-[#1a1a1a]">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300 group overflow-hidden">
+                        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-extrabold tracking-tight text-gray-900 uppercase leading-none">F&W <span class="text-blue-600">Studio</span></span>
+                        <span class="text-[8px] font-bold text-gray-400 uppercase tracking-widest mt-1">Marketing & Growth</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center text-sm font-bold uppercase tracking-wider">
+                    <a href="#services" class="text-gray-600 hover:text-blue-600 transition">Services</a>
+                    <a href="#contact" class="btn-shine bg-blue-600 text-white px-8 py-3 rounded-full shadow-xl shadow-blue-200 hover:bg-blue-700 transition text-xs">Free Audit</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-gradient pt-40 pb-24 overflow-hidden border-b border-gray-50">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center">
+            <div class="lg:w-3/5 text-center lg:text-left z-10">
+                <div class="inline-flex items-center space-x-2 bg-orange-50 border border-orange-100 px-4 py-2 rounded-full mb-8">
+                    <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-orange-600"></span></span>
+                    <span class="text-orange-700 text-[10px] font-bold uppercase tracking-widest">India's #1 Integrated Growth Agency</span>
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] tracking-tight">
+                    Scale Your Brand to <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700">7-Figures</span> & Beyond.
+                </h1>
+                <p class="mt-8 text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                    We manage the <span class="text-blue-600 font-bold">Ads, Web, and Marketplace</span> so Indian Founders can focus on what they do best: Leading.
+                </p>
+                <div class="mt-12 flex flex-col sm:flex-row justify-center lg:justify-start gap-5">
+                    <a href="#contact" class="btn-shine px-12 py-5 bg-blue-600 text-white rounded-2xl font-black text-lg shadow-2xl shadow-blue-300 hover:bg-blue-700 transition flex items-center justify-center">
+                        Book My Free Audit
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="lg:w-2/5 mt-16 lg:mt-0 relative">
+                <div class="floating bg-white p-6 rounded-[2.5rem] shadow-2xl border border-gray-100">
+                    <div class="flex justify-between items-center mb-6">
+                        <p class="font-bold text-gray-800">Monthly Revenue</p>
+                        <span class="text-green-500 bg-green-50 px-3 py-1 rounded-full text-xs font-bold">+245%</span>
+                    </div>
+                    <div class="h-40 flex items-end gap-2">
+                        <div class="w-full bg-blue-100 h-1/4 rounded-t-lg"></div>
+                        <div class="w-full bg-blue-200 h-1/2 rounded-t-lg"></div>
+                        <div class="w-full bg-blue-400 h-2/3 rounded-t-lg"></div>
+                        <div class="w-full bg-blue-600 h-full rounded-t-lg"></div>
+                    </div>
+                    <p class="mt-6 text-3xl font-black text-slate-900">₹45,00,000+</p>
+                    <p class="text-xs text-gray-400 font-bold uppercase tracking-widest mt-1">Generated for Clients This Month</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Grid -->
+    <section id="services" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-orange-600 font-bold tracking-widest text-sm uppercase mb-4">Our Core Expertise</h2>
+                <p class="text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">Stop Juggling Vendors. <br>Get One <span class="text-blue-600">Growth Partner.</span></p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card p-10 bg-white rounded-[2.5rem] border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-8">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-extrabold mb-4">Meta & Google Ads</h3>
+                    <p class="text-gray-500 leading-relaxed">Lower your CAC and increase ROAS. We build Indian-market specific funnels that convert cold traffic into high-value customers.</p>
+                </div>
+                <div class="service-card p-10 bg-orange-50 rounded-[2.5rem] border border-orange-100">
+                    <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center mb-8">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-extrabold mb-4">Marketplace Management</h3>
+                    <p class="text-gray-500 leading-relaxed">End-to-end management for <b>Amazon, Flipkart, Meesho, & Myntra</b>. Listing optimization, A+ content, and marketplace advertising.</p>
+                </div>
+                <div class="service-card p-10 bg-white rounded-[2.5rem] border border-gray-100">
+                    <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-8">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-extrabold mb-4">E-com & Web Dev</h3>
+                    <p class="text-gray-500 leading-relaxed">Shopify, Custom PHP, or React. We build lighting-fast websites optimized for Indian internet speeds and mobile-first users.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA & Contact -->
+    <section id="contact" class="py-32 bg-[#050505] relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 flex flex-col lg:flex-row gap-20">
+            <div class="lg:w-1/2 text-white">
+                <h2 class="text-5xl font-black mb-8 leading-tight">Scale Your Business <br>Across Bharat.</h2>
+                <p class="text-gray-400 text-xl mb-12">Whether you are a local shop or a Pan-India D2C brand, our systems are built to handle the unique challenges of the Indian market.</p>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="font-bold text-gray-200">Official Meta Business Partners</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="font-bold text-gray-200">100% Tax & Legal Compliance Guarantee</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lg:w-1/2">
+                <form id="contactForm" class="bg-white p-10 rounded-[3rem] shadow-2xl relative">
+                    <div class="absolute -top-4 -right-4 bg-orange-600 text-white px-4 py-2 rounded-lg font-bold text-xs animate-bounce">Limited Slots for May!</div>
+                    <h3 class="text-3xl font-black mb-2 text-slate-900">Free Consultation</h3>
+                    <p class="text-gray-500 mb-8">Tell us which services you need to grow.</p>
+                    
+                    <div class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <input type="text" id="firstName" required class="w-full px-6 py-4 bg-gray-50 rounded-2xl border-none ring-1 ring-gray-200 focus:ring-2 focus:ring-blue-600 outline-none transition placeholder:text-gray-400" placeholder="First Name">
+                            <input type="text" id="lastName" required class="w-full px-6 py-4 bg-gray-50 rounded-2xl border-none ring-1 ring-gray-200 focus:ring-2 focus:ring-blue-600 outline-none transition placeholder:text-gray-400" placeholder="Last Name">
+                        </div>
+                        
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-6 pointer-events-none">
+                                <span class="text-gray-400 font-bold">+91</span>
+                            </div>
+                            <input type="number" id="clientPhone" required 
+                                class="w-full pl-16 pr-6 py-4 bg-gray-50 rounded-2xl border-none ring-1 ring-gray-200 focus:ring-2 focus:ring-blue-600 outline-none transition placeholder:text-gray-400" 
+                                placeholder="10-digit WhatsApp Number"
+                                oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10);">
+                        </div>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2 ml-1">Service Required</label>
+                                <select id="clientService" class="w-full px-6 py-4 bg-gray-50 rounded-2xl border-none ring-1 ring-gray-200 focus:ring-2 focus:ring-blue-600 outline-none transition cursor-pointer">
+                                    <option>Meta & Google Ads</option>
+                                    <option>Marketplace (Amazon/Flipkart)</option>
+                                    <option>Website Development</option>
+                                    <option>GST & MSME Registration</option>
+                                    <option>Social Media Management</option>
+                                    <option>Full Growth Suite</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2 ml-1">Monthly Budget</label>
+                                <select id="clientBudget" class="w-full px-6 py-4 bg-gray-50 rounded-2xl border-none ring-1 ring-gray-200 focus:ring-2 focus:ring-blue-600 outline-none transition cursor-pointer">
+                                    <option>₹10,000 - ₹20,000</option>
+                                    <option>₹20,000 - ₹30,000</option>
+                                    <option>₹30,000 - ₹40,000</option>
+                                    <option>₹50,000+</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <textarea id="clientMessage" class="w-full px-6 py-4 bg-gray-50 rounded-2xl border-none ring-1 ring-gray-200 focus:ring-2 focus:ring-blue-600 outline-none transition placeholder:text-gray-400" rows="3" placeholder="Tell us about your brand goals (Optional)"></textarea>
+                        
+                        <button type="submit" id="submitBtn" class="btn-shine w-full py-5 bg-blue-600 text-white font-black rounded-2xl text-lg shadow-xl shadow-blue-200 hover:bg-blue-700 transition tracking-tight flex items-center justify-center gap-3 group">
+                            <span id="btnText">CLAIM MY FREE AUDIT</span>
+                            <div id="btnLoader" class="loader"></div>
+                        </button>
+                    </div>
+                </form>
+                
+                <div id="successMsg" class="hidden bg-white p-12 rounded-[3rem] text-center shadow-2xl">
+                    <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <p class="text-2xl font-black text-gray-900">Form Submitted!</p>
+                    <p class="text-gray-500 mt-2">Opening WhatsApp for final confirmation...</p>
+                    <div class="mt-8">
+                        <a id="manualWaLink" href="#" target="_blank" class="inline-block px-8 py-3 bg-green-500 text-white rounded-xl font-bold hover:bg-green-600 transition">
+                            Click here if not redirected
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz2GaLvJLD5avnqTcBU0Xqu891yzcbkEvRmEDEV0JFx9jbgf7lw6Ul2SKznXuGxVtbc/exec';
+
+        function capitalize(str) {
+            if (!str) return "";
+            return str.trim().split(' ').map(word => 
+                word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+            ).join(' ');
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const btnLoader = document.getElementById('btnLoader');
+            
+            const myWhatsAppNumber = "916399903954"; 
+            
+            const data = {
+                firstName: capitalize(document.getElementById('firstName').value),
+                lastName: capitalize(document.getElementById('lastName').value),
+                phone: document.getElementById('clientPhone').value,
+                service: document.getElementById('clientService').value,
+                budget: document.getElementById('clientBudget').value,
+                message: document.getElementById('clientMessage').value
+            };
+
+            if (data.phone.length !== 10) {
+                const originalText = btnText.innerText;
+                btnText.innerText = "Enter valid 10-digit number";
+                submitBtn.classList.replace('bg-blue-600', 'bg-red-500');
+                setTimeout(() => {
+                    btnText.innerText = originalText;
+                    submitBtn.classList.replace('bg-red-500', 'bg-blue-600');
+                }, 2000);
+                return;
+            }
+
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoader.style.display = 'block';
+
+            // ENHANCED: Double-encode message components to ensure WhatsApp receives them
+            const textContent = `*F&W Studio - New Lead Request*\n\n` +
+                                `*First Name:* ${data.firstName}\n` +
+                                `*Last Name:* ${data.lastName}\n` +
+                                `*WhatsApp:* +91${data.phone}\n` +
+                                `*Service:* ${data.service}\n` +
+                                `*Budget:* ${data.budget}\n` +
+                                `*Goals:* ${data.message ? data.message : 'N/A'}`;
+
+            const waUrl = `https://wa.me/${myWhatsAppNumber}?text=${encodeURIComponent(textContent)}`;
+
+            try {
+                // 1. Send to Google Sheets (Silent)
+                fetch(scriptURL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    cache: 'no-cache',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                // 2. Switch UI
+                this.classList.add('hidden');
+                document.getElementById('successMsg').classList.remove('hidden');
+                document.getElementById('manualWaLink').href = waUrl;
+
+                // 3. Force Redirect (More reliable than window.open)
+                setTimeout(() => {
+                    window.location.href = waUrl;
+                }, 800);
+
+            } catch (error) {
+                console.error('Submission error:', error);
+                window.location.href = waUrl; // Fail forward to WhatsApp anyway
+            }
+        });
+    </script>
+</body>
+</html>
