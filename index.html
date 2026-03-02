@@ -198,7 +198,7 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2 ml-1">Service Required</label>
-                                <select id="clientService" class="custom-select w-full px-6 py-4 bg-gray-50 rounded-2xl border-none ring-1 ring-gray-200 focus:ring-2 focus:ring-blue-600 outline-none transition cursor-pointer">
+                                <select id="clientService" onchange="handleServiceChange(this.value)" class="custom-select w-full px-6 py-4 bg-gray-50 rounded-2xl border-none ring-1 ring-gray-200 focus:ring-2 focus:ring-blue-600 outline-none transition cursor-pointer">
                                     <option>Meta & Google Ads</option>
                                     <option>Marketplace (Amazon/Flipkart)</option>
                                     <option>Website Development</option>
@@ -246,6 +246,26 @@
 
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbz2GaLvJLD5avnqTcBU0Xqu891yzcbkEvRmEDEV0JFx9jbgf7lw6Ul2SKznXuGxVtbc/exec';
+
+        // Helper to handle budget based on service selection
+        function handleServiceChange(service) {
+            const budgetSelect = document.getElementById('clientBudget');
+            if (service === "GST & MSME Registration") {
+                // Save original options if needed, then clear and set fixed price
+                budgetSelect.innerHTML = '<option value="₹3,000">₹3,000 (Flat Fee)</option>';
+                budgetSelect.classList.add('bg-blue-50', 'ring-blue-100');
+            } else {
+                // Restore standard marketing budget options
+                budgetSelect.innerHTML = `
+                    <option>₹5,000 - ₹10,000</option>
+                    <option>₹10,000 - ₹20,000</option>
+                    <option>₹20,000 - ₹30,000</option>
+                    <option>₹30,000 - ₹40,000</option>
+                    <option>₹50,000+</option>
+                `;
+                budgetSelect.classList.remove('bg-blue-50', 'ring-blue-100');
+            }
+        }
 
         function capitalize(str) {
             if (!str) return "";
